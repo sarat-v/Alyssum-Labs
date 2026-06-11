@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette */
+  --emerald: #1c3f40;
+  --olive: #abb69f;
+  --persian-orange: #e3c9b8;
+  --off-white: #f7f4ef;
+
+  /* Neutral surfaces — colour lives on sector cards only */
+  --bg-base: var(--off-white);
+  --bg-surface: #f0ebe4;
+  --bg-elevated: #ede4da;
+  --text-primary: var(--emerald);
+  --text-secondary: #4a6364;
+  --accent-core: var(--emerald);
+  --accent-muted: #6f7d63;
+  --accent-ls: var(--olive);
+  --accent-pe: #9a7b65;
+  --accent-alyssum: var(--olive);
+  --accent-warm: var(--persian-orange);
+  --border-subtle: rgba(28, 63, 64, 0.14);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-core: var(--accent-core);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-ls: var(--accent-ls);
+  --color-accent-pe: var(--accent-pe);
+  --color-accent-alyssum: var(--accent-alyssum);
+  --color-accent-warm: var(--accent-warm);
+  --color-emerald: var(--emerald);
+  --color-olive: var(--olive);
+  --color-persian-orange: var(--persian-orange);
+  --color-off-white: var(--off-white);
+  --color-border-subtle: var(--border-subtle);
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument-serif);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(171, 182, 159, 0.45);
+  color: var(--emerald);
+}
+
+.img-brand-tone {
+  filter: saturate(0.72) sepia(0.22) hue-rotate(8deg) brightness(1.06) contrast(0.92);
+}
+
+.img-sector-tone {
+  filter: saturate(0.38) sepia(0.2) hue-rotate(6deg) brightness(0.88) contrast(0.85);
+}
+
+.section-reveal {
+  animation: fade-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shader-bg {
+  background: var(--off-white);
+}
+
+.parallax-layer {
+  animation: parallax-shift linear both;
+  animation-timeline: view();
+  animation-range: cover 0% cover 100%;
+}
+
+@keyframes parallax-shift {
+  from {
+    transform: translateY(-8%);
+  }
+  to {
+    transform: translateY(8%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal,
+  .parallax-layer {
+    animation: none !important;
+  }
 }

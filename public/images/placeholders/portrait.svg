@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <linearGradient id="portrait-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12161C"/>
+      <stop offset="100%" stop-color="#0A0C0F"/>
+    </linearGradient>
+    <radialGradient id="portrait-rim" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#C8D4E0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C8D4E0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="portrait-silhouette" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#1A2030"/>
+      <stop offset="100%" stop-color="#12161C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#portrait-bg)"/>
+  <rect width="800" height="1000" fill="url(#portrait-rim)"/>
+  <ellipse cx="400" cy="420" rx="180" ry="220" fill="url(#portrait-silhouette)" opacity="0.9"/>
+  <ellipse cx="400" cy="380" rx="120" ry="140" fill="#1A2030" opacity="0.85"/>
+  <text x="400" y="410" text-anchor="middle" fill="#C8D4E0" font-family="Georgia, serif" font-size="120" opacity="0.35">S</text>
+  <text x="48" y="960" fill="#9BA3AF" font-family="system-ui,sans-serif" font-size="14" letter-spacing="0.12em">INTERIM PORTRAIT PLACEHOLDER</text>
+</svg>

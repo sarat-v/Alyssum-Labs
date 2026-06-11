@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alyssum Labs Website
 
-## Getting Started
+Next.js implementation of the Alyssum Labs marketing site.
 
-First, run the development server:
+**Plan docs (parent folder):**
+- `../ALabs_Website_Content_Plan.md`
+- `../ALabs_Website_Design_Plan.md`
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Live site
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Production:** https://alyssum-labs.vercel.app
 
-## Learn More
+## Imagery (`public/images/`)
 
-To learn more about Next.js, take a look at the following resources:
+| File | Used on |
+|------|---------|
+| `hero-core.png` | Home hero, About visual, pillar bento, OG image |
+| `life-sciences.png` | Sector panel, LS capability cards, Why bands |
+| `private-equity.png` | Sector panel, PE banner, capability cards, Why bands |
+| `pipeline-sequence.png` | What We Do — Life Sciences pipeline |
+| `portrait.png` | About — leadership (interim; replace with real photo) |
+| `governance-texture.png` | Why Alyssum Labs band |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Legacy SVG placeholders remain in `public/images/placeholders/` if needed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Interim assets (replace when ready)
 
-## Deploy on Vercel
+| Asset | Path |
+|-------|------|
+| Logo wordmark | `public/logo.svg` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All copy lives in `src/lib/content.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Status
+
+- Phase 1 scaffold: all 6 pages, design tokens, hero motion, bento pillars, sector panels
+- Contact form: client-side demo only (no email backend yet)
+- Scroll sequence: placeholder block on What We Do (Life Sciences)

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1066 1052" fill="none">
+  <defs>
+    <linearGradient id="sv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12161C"/>
+      <stop offset="100%" stop-color="#0A0C0F"/>
+    </linearGradient>
+    <radialGradient id="sv-glow" cx="65%" cy="32%" r="55%">
+      <stop offset="0%" stop-color="#3D8B7A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3D8B7A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sv-silhouette" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#1A2030"/>
+      <stop offset="100%" stop-color="#12161C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1066" height="1052" fill="url(#sv-bg)"/>
+  <rect width="1066" height="1052" fill="url(#sv-glow)"/>
+  <ellipse cx="533" cy="430" rx="220" ry="250" fill="url(#sv-silhouette)" opacity="0.92"/>
+  <ellipse cx="533" cy="390" rx="150" ry="170" fill="#1A2030" opacity="0.88"/>
+  <text x="533" y="430" text-anchor="middle" fill="#3D8B7A" font-family="Georgia, serif" font-size="140" opacity="0.45">SV</text>
+  <text x="48" y="1010" fill="#9BA3AF" font-family="system-ui,sans-serif" font-size="14" letter-spacing="0.12em">INTERIM PORTRAIT PLACEHOLDER</text>
+</svg>

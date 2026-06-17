@@ -7,7 +7,7 @@ import { ourModel } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Our Model",
   description:
-    "Program-level embedding, continuous learning systems, and commercial models aligned to long-term outcomes.",
+    "Program-level partnerships, continuous development, and commercial structures aligned to long-term outcomes.",
 };
 
 export default function OurModelPage() {
@@ -16,34 +16,73 @@ export default function OurModelPage() {
       <PageHero
         eyebrow="How We Operate"
         title="Our Model"
-        description="How we work, how we create value, and how we participate in the outcomes our technology enables."
+        description="How we work, how we engage, and how our arrangements are structured for the long term."
+        band="warm"
       />
 
-      {/* Lead statement */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
-        <p className="section-reveal max-w-3xl font-serif text-2xl leading-snug text-text-primary lg:text-[1.75rem] lg:leading-normal">
-          {ourModel.intro}
-        </p>
+      <section className="section-band-neutral section-shell">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="section-reveal max-w-5xl">
+            <div className="heading-accent mb-6" aria-hidden />
+            <p className="font-serif text-2xl leading-snug text-text-primary lg:text-[2rem] lg:leading-[1.35]">
+              {ourModel.intro}
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* How We Work — surface band, step cards */}
-      <section className="bg-bg-surface/50 py-24 lg:py-32">
+      <section className="section-band-olive section-shell">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading eyebrow="Process">How We Work</SectionHeading>
-          <div className="mt-12 grid gap-5 md:grid-cols-3 lg:mt-14">
-            {ourModel.howWeWork.map((item, i) => (
+          <div className="relative mt-12 lg:mt-16">
+            <div className="tech-divider absolute left-0 right-0 top-5 hidden lg:block" aria-hidden />
+            <ol className="grid gap-8 lg:grid-cols-3">
+              {ourModel.howWeWork.map((item, i) => (
+                <li key={item.title} className="section-reveal list-none pt-3 lg:pt-0">
+                  <article className="relative h-full pt-10">
+                    <div
+                      className={clsx(
+                        "absolute left-6 top-0 z-10 flex h-10 w-10 items-center justify-center rounded-full border text-lg font-serif lg:left-1/2 lg:-translate-x-1/2",
+                        i % 2 === 0
+                          ? "border-olive/45 bg-olive/30 text-emerald/75"
+                          : "border-persian-orange/50 bg-persian-orange/30 text-emerald/75",
+                      )}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div className="surface-card-elevated h-full rounded-2xl border-t-4 border-t-olive/70 p-7 lg:p-9">
+                      <h3 className="font-serif text-2xl leading-snug text-text-primary">
+                        {item.title}
+                      </h3>
+                      <p className="mt-4 text-base leading-relaxed text-text-secondary">
+                        {item.body}
+                      </p>
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-band-warm section-shell">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeading eyebrow="Engagement">How We Engage</SectionHeading>
+          <div className="mt-12 grid gap-5 lg:mt-14 lg:grid-cols-3">
+            {ourModel.howWeEngage.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal flex flex-col rounded-2xl border border-border-subtle border-t-[3px] border-t-olive/70 bg-off-white/70 p-8 backdrop-blur-[2px] transition-transform duration-500 hover:-translate-y-1 lg:p-9"
+                className="section-reveal surface-card-elevated rounded-2xl border-t-4 border-t-persian-orange/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <p className="font-serif text-4xl text-accent-muted/50">
                   {String(i + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-5 font-serif text-2xl text-text-primary">
+                <h3 className="mt-5 font-serif text-xl text-text-primary lg:text-2xl">
                   {item.title}
                 </h3>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-text-secondary">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-text-secondary lg:text-base lg:leading-[1.7]">
                   {item.body}
                 </p>
               </article>
@@ -52,38 +91,26 @@ export default function OurModelPage() {
         </div>
       </section>
 
-      {/* Commercial Model */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-        <SectionHeading eyebrow="Commercial">Our Commercial Model</SectionHeading>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {ourModel.commercial.map((item) => (
-            <article
-              key={item.title}
-              className={clsx(
-                "section-reveal flex flex-col rounded-2xl p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9",
-                item.featured
-                  ? "bg-emerald text-off-white"
-                  : "border border-border-subtle bg-bg-surface/60 text-text-primary",
-              )}
-            >
-              <h3
-                className={clsx(
-                  "font-serif text-xl",
-                  item.featured ? "text-off-white" : "text-text-primary",
-                )}
+      <section className="section-band-neutral section-shell">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeading eyebrow="Outcomes">Aligned to What We Build</SectionHeading>
+          <p className="section-reveal mt-6 max-w-3xl font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
+            {ourModel.outcomes.framing}
+          </p>
+          <div className="mt-12 grid gap-5 md:grid-cols-3 lg:mt-14">
+            {ourModel.outcomes.items.map((item, i) => (
+              <article
+                key={item.title}
+                className="section-reveal surface-card-elevated rounded-2xl border border-border-subtle/80 border-t-4 border-t-olive/70 bg-bg-band-olive/40 p-8 lg:p-9"
+                style={{ animationDelay: `${i * 80}ms` }}
               >
-                {item.title}
-              </h3>
-              <p
-                className={clsx(
-                  "mt-4 flex-1 text-sm leading-relaxed",
-                  item.featured ? "text-off-white/85" : "text-text-secondary",
-                )}
-              >
-                {item.body}
-              </p>
-            </article>
-          ))}
+                <h3 className="font-serif text-2xl text-text-primary">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-text-secondary lg:text-base">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </>

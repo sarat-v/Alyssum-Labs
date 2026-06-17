@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Instrument_Serif } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { CookieConsentBanner } from "@/components/layout/CookieConsentBanner";
+import { AnalyticsLoader } from "@/components/layout/AnalyticsLoader";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -29,8 +30,16 @@ export const metadata: Metadata = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "https://alyssum-labs.vercel.app",
   ),
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/icon-32.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   title: {
-    default: `${site.name} — Technology Intelligence for Life Sciences & Financial Markets`,
+    default: site.name,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -41,17 +50,46 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.legalName,
+    url: "https://alyssumlabs.com",
+    email: site.email,
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "SG",
+      streetAddress: site.registeredOfficeAddress.join(", "),
+    },
+    identifier: site.uen || undefined,
+    sameAs: site.linkedinCompanyUrl ? [site.linkedinCompanyUrl] : [],
+  };
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg-base text-text-primary">
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <AnalyticsLoader />
+        <CookieConsentBanner />
         <SmoothScroll>
           <Header />
           <main className="flex-1">{children}</main>

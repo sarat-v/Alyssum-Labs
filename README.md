@@ -25,7 +25,8 @@ Open [http://localhost:3001](http://localhost:3001).
 |------|---------|
 | `hero-core.png` | Home hero, About visual, pillar bento, OG image |
 | `life-sciences.png` | Sector panel, LS capability cards, Why bands |
-| `private-equity.png` | Sector panel, PE banner, capability cards, Why bands |
+| `financial-markets.png` | Home sector panel — Financial Markets |
+| `private-equity.png` | What We Do FM banner, capability cards, Why bands |
 | `pipeline-sequence.png` | What We Do — Life Sciences pipeline |
 | `portrait.png` | About — leadership (interim; replace with real photo) |
 | `governance-texture.png` | Why Alyssum Labs band |

@@ -6,7 +6,7 @@ import { whatWeDo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "What We Do",
   description:
-    "AI-driven intelligence systems embedded in life sciences and financial markets programmes.",
+    "AI-driven intelligence systems for complex, high-stakes programmes in life sciences and private capital.",
 };
 
 export default function WhatWeDoPage() {
@@ -16,6 +16,7 @@ export default function WhatWeDoPage() {
         eyebrow="Capabilities"
         title="What We Do"
         description={whatWeDo.intro}
+        band="warm"
       />
       <SectorTabs />
     </>

@@ -6,6 +6,7 @@ type SectionHeadingProps = {
   className?: string;
   as?: "h2" | "h3";
   size?: "md" | "lg";
+  accent?: boolean;
 };
 
 export function SectionHeading({
@@ -14,13 +15,17 @@ export function SectionHeading({
   className,
   as: Tag = "h2",
   size = "lg",
+  accent = true,
 }: SectionHeadingProps) {
   return (
-    <div className={clsx("section-reveal", className)}>
+    <div className={clsx("section-reveal max-w-3xl", className)}>
       {eyebrow && (
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-muted">
-          {eyebrow}
-        </p>
+        <>
+          {accent && <div className="heading-accent mb-4" aria-hidden />}
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-muted">
+            {eyebrow}
+          </p>
+        </>
       )}
       <Tag
         className={clsx(

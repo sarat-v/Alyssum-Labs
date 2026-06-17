@@ -1,0 +1,106 @@
+{
+  "comparedAt": "2026-06-16T11:38:42.581Z",
+  "threshold": "<1% pass, 1–5% minor, >5% review",
+  "results": [
+    {
+      "viewport": "desktop",
+      "shot": "01-home-hero",
+      "width": 1440,
+      "height": 900,
+      "mismatchedPixels": 12785,
+      "mismatchPercent": 0.99,
+      "diffFile": "qa/diffs/desktop/01-home-hero.png",
+      "status": "pass"
+    },
+    {
+      "viewport": "desktop",
+      "shot": "02-home-sectors",
+      "width": 1440,
+      "height": 900,
+      "mismatchedPixels": 30487,
+      "mismatchPercent": 2.35,
+      "diffFile": "qa/diffs/desktop/02-home-sectors.png",
+      "status": "minor"
+    },
+    {
+      "viewport": "desktop",
+      "shot": "03-home-header-scrolled",
+      "width": 1440,
+      "height": 900,
+      "mismatchedPixels": 12799,
+      "mismatchPercent": 0.99,
+      "diffFile": "qa/diffs/desktop/03-home-header-scrolled.png",
+      "status": "pass"
+    },
+    {
+      "viewport": "desktop",
+      "shot": "04-what-we-do",
+      "width": 1440,
+      "height": 900,
+      "mismatchedPixels": 4652,
+      "mismatchPercent": 0.36,
+      "diffFile": "qa/diffs/desktop/04-what-we-do.png",
+      "status": "pass"
+    },
+    {
+      "viewport": "desktop",
+      "shot": "05-contact",
+      "width": 1440,
+      "height": 900,
+      "mismatchedPixels": 9505,
+      "mismatchPercent": 0.73,
+      "diffFile": "qa/diffs/desktop/05-contact.png",
+      "status": "pass"
+    },
+    {
+      "viewport": "mobile",
+      "shot": "01-home-hero",
+      "width": 1170,
+      "height": 2532,
+      "mismatchedPixels": 66233,
+      "mismatchPercent": 2.24,
+      "diffFile": "qa/diffs/mobile/01-home-hero.png",
+      "status": "minor"
+    },
+    {
+      "viewport": "mobile",
+      "shot": "02-home-sectors",
+      "width": 1170,
+      "height": 2532,
+      "mismatchedPixels": 40991,
+      "mismatchPercent": 1.38,
+      "diffFile": "qa/diffs/mobile/02-home-sectors.png",
+      "status": "minor"
+    },
+    {
+      "viewport": "mobile",
+      "shot": "03-home-header-scrolled",
+      "width": 1170,
+      "height": 2532,
+      "mismatchedPixels": 68281,
+      "mismatchPercent": 2.3,
+      "diffFile": "qa/diffs/mobile/03-home-header-scrolled.png",
+      "status": "minor"
+    },
+    {
+      "viewport": "mobile",
+      "shot": "04-what-we-do",
+      "width": 1170,
+      "height": 2532,
+      "mismatchedPixels": 29127,
+      "mismatchPercent": 0.98,
+      "diffFile": "qa/diffs/mobile/04-what-we-do.png",
+      "status": "pass"
+    },
+    {
+      "viewport": "mobile",
+      "shot": "05-contact",
+      "width": 1170,
+      "height": 2532,
+      "mismatchedPixels": 119328,
+      "mismatchPercent": 4.03,
+      "diffFile": "qa/diffs/mobile/05-contact.png",
+      "status": "minor"
+    }
+  ]
+}

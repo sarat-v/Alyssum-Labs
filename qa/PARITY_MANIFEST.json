@@ -1,0 +1,146 @@
+{
+  "capturedAt": "2026-06-16T11:38:21.924Z",
+  "baseUrl": "https://alyssumlabs.com",
+  "items": [
+    {
+      "browser": "chrome",
+      "viewport": "desktop",
+      "shot": "01-home-hero",
+      "file": "qa/baselines/chrome-desktop/01-home-hero.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "desktop",
+      "shot": "02-home-sectors",
+      "file": "qa/baselines/chrome-desktop/02-home-sectors.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "desktop",
+      "shot": "03-home-header-scrolled",
+      "file": "qa/baselines/chrome-desktop/03-home-header-scrolled.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "desktop",
+      "shot": "04-what-we-do",
+      "file": "qa/baselines/chrome-desktop/04-what-we-do.png",
+      "url": "https://alyssumlabs.com/what-we-do"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "desktop",
+      "shot": "05-contact",
+      "file": "qa/baselines/chrome-desktop/05-contact.png",
+      "url": "https://alyssumlabs.com/contact"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "mobile",
+      "shot": "01-home-hero",
+      "file": "qa/baselines/chrome-mobile/01-home-hero.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "mobile",
+      "shot": "02-home-sectors",
+      "file": "qa/baselines/chrome-mobile/02-home-sectors.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "mobile",
+      "shot": "03-home-header-scrolled",
+      "file": "qa/baselines/chrome-mobile/03-home-header-scrolled.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "mobile",
+      "shot": "04-what-we-do",
+      "file": "qa/baselines/chrome-mobile/04-what-we-do.png",
+      "url": "https://alyssumlabs.com/what-we-do"
+    },
+    {
+      "browser": "chrome",
+      "viewport": "mobile",
+      "shot": "05-contact",
+      "file": "qa/baselines/chrome-mobile/05-contact.png",
+      "url": "https://alyssumlabs.com/contact"
+    },
+    {
+      "browser": "safari",
+      "viewport": "desktop",
+      "shot": "01-home-hero",
+      "file": "qa/baselines/safari-desktop/01-home-hero.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "safari",
+      "viewport": "desktop",
+      "shot": "02-home-sectors",
+      "file": "qa/baselines/safari-desktop/02-home-sectors.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "safari",
+      "viewport": "desktop",
+      "shot": "03-home-header-scrolled",
+      "file": "qa/baselines/safari-desktop/03-home-header-scrolled.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "safari",
+      "viewport": "desktop",
+      "shot": "04-what-we-do",
+      "file": "qa/baselines/safari-desktop/04-what-we-do.png",
+      "url": "https://alyssumlabs.com/what-we-do"
+    },
+    {
+      "browser": "safari",
+      "viewport": "desktop",
+      "shot": "05-contact",
+      "file": "qa/baselines/safari-desktop/05-contact.png",
+      "url": "https://alyssumlabs.com/contact"
+    },
+    {
+      "browser": "safari",
+      "viewport": "mobile",
+      "shot": "01-home-hero",
+      "file": "qa/baselines/safari-mobile/01-home-hero.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "safari",
+      "viewport": "mobile",
+      "shot": "02-home-sectors",
+      "file": "qa/baselines/safari-mobile/02-home-sectors.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "safari",
+      "viewport": "mobile",
+      "shot": "03-home-header-scrolled",
+      "file": "qa/baselines/safari-mobile/03-home-header-scrolled.png",
+      "url": "https://alyssumlabs.com/"
+    },
+    {
+      "browser": "safari",
+      "viewport": "mobile",
+      "shot": "04-what-we-do",
+      "file": "qa/baselines/safari-mobile/04-what-we-do.png",
+      "url": "https://alyssumlabs.com/what-we-do"
+    },
+    {
+      "browser": "safari",
+      "viewport": "mobile",
+      "shot": "05-contact",
+      "file": "qa/baselines/safari-mobile/05-contact.png",
+      "url": "https://alyssumlabs.com/contact"
+    }
+  ]
+}

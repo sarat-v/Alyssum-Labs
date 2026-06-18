@@ -7,7 +7,7 @@ import { HeroInterferenceBackground } from "@/components/home/HeroInterferenceBa
 
 export function Hero() {
   return (
-    <section id="home-hero" className="relative flex min-h-screen items-end overflow-hidden px-0 pb-14 pt-24 lg:pb-20 lg:pt-24">
+    <section id="home-hero" className="relative flex min-h-screen items-end overflow-x-hidden px-0 pb-14 pt-24 lg:pb-20 lg:pt-24">
       <HeroInterferenceBackground />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">

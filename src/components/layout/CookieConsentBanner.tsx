@@ -56,7 +56,7 @@ export function CookieConsentBanner() {
     return (
       <button
         type="button"
-        className="fixed bottom-4 right-4 z-[70] rounded-full border border-border-subtle bg-off-white/95 px-4 py-2 text-xs text-text-secondary shadow-md backdrop-blur-xl"
+        className="fixed bottom-4 right-4 z-70 rounded-full border border-border-subtle bg-off-white/95 px-4 py-2 text-xs text-text-secondary shadow-md backdrop-blur-xl"
         onClick={() => {
           setIsVisible(true);
           setShowManage(true);
@@ -68,7 +68,7 @@ export function CookieConsentBanner() {
   }
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-3xl rounded-2xl border border-border-subtle bg-off-white/95 p-5 shadow-xl backdrop-blur-xl lg:bottom-6">
+    <div className="fixed inset-x-4 bottom-4 z-70 mx-auto max-w-3xl rounded-2xl border border-border-subtle bg-off-white/95 p-5 shadow-xl backdrop-blur-xl lg:bottom-6">
       <p className="font-serif text-xl text-text-primary">Cookie preferences</p>
       <p className="mt-2 text-sm leading-relaxed text-text-secondary">
         We use essential cookies for site functionality and optional cookies for analytics. You

@@ -29,7 +29,7 @@ export function HeroInterferenceBackground() {
       <div className="hero-vibrance-right absolute right-[-10%] top-[-4%] h-[98%] w-[68%] rounded-full bg-[radial-gradient(circle,rgba(122,189,168,0.56)_0%,rgba(171,182,159,0.34)_32%,rgba(227,201,184,0.22)_56%,rgba(227,201,184,0)_80%)] blur-[62px]" />
       <div className="hero-vibrance-right-soft absolute right-[-2%] top-[28%] h-[62%] w-[48%] rounded-full bg-[radial-gradient(circle,rgba(241,172,134,0.42)_0%,rgba(125,192,164,0.26)_40%,rgba(171,182,159,0)_78%)] blur-[84px]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(247,244,239,0.95)_0%,rgba(247,244,239,0.88)_30%,rgba(247,244,239,0.46)_54%,rgba(247,244,239,0.12)_73%,rgba(247,244,239,0)_100%)] lg:bg-[linear-gradient(to_right,rgba(247,244,239,0.97)_0%,rgba(247,244,239,0.86)_23%,rgba(247,244,239,0.44)_41%,rgba(247,244,239,0.12)_58%,rgba(247,244,239,0)_82%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(to_bottom,rgba(242,240,234,0)_0%,#f2f0ea_100%)] lg:h-56" />
+      <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_bottom,rgba(247,244,239,0)_0%,rgba(247,244,239,0.18)_42%,rgba(247,244,239,0.62)_72%,var(--off-white)_100%)] lg:h-72" />
 
       <style jsx>{`
         .hero-vibrance-right {

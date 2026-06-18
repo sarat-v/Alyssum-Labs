@@ -101,7 +101,7 @@ export default function OurModelPage() {
             {ourModel.outcomes.items.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal surface-card-elevated rounded-2xl border border-border-subtle/80 border-t-4 border-t-olive/70 bg-bg-band-olive/40 p-8 lg:p-9"
+                className="section-reveal surface-card-elevated rounded-2xl border border-border-subtle/80 border-t-4 border-t-olive/70 p-8 lg:p-9"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <h3 className="font-serif text-2xl text-text-primary">{item.title}</h3>

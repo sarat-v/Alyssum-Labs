@@ -5,11 +5,13 @@ export function HomePageBackdrop() {
       aria-hidden
       style={{
         background: [
-          "radial-gradient(ellipse 90% 55% at 72% 8%, rgba(171, 182, 159, 0.28), rgba(171, 182, 159, 0) 58%)",
-          "radial-gradient(ellipse 80% 50% at 18% 22%, rgba(227, 201, 184, 0.22), rgba(227, 201, 184, 0) 55%)",
-          "radial-gradient(ellipse 85% 48% at 55% 55%, rgba(171, 182, 159, 0.1), rgba(171, 182, 159, 0) 54%)",
-          "radial-gradient(ellipse 75% 42% at 82% 88%, rgba(227, 201, 184, 0.2), rgba(227, 201, 184, 0) 50%)",
-          "linear-gradient(180deg, #f7f4ef 0%, #f6f2ec 45%, #f7f4ef 100%)",
+          /* Keep top area clean so hero fade can hand off smoothly */
+          "radial-gradient(ellipse 78% 34% at 62% 52%, rgba(171,182,159,0.16), transparent 56%)",
+          "radial-gradient(ellipse 56% 24% at 20% 58%, rgba(171,182,159,0.10), transparent 52%)",
+          /* Warmth lower on page */
+          "radial-gradient(ellipse 60% 18% at 50% 66%, rgba(227,201,184,0.14), transparent 46%)",
+          /* Off-white base under the hero handoff */
+          "linear-gradient(180deg, var(--off-white) 0%, var(--off-white) 100%)",
         ].join(", "),
       }}
     />

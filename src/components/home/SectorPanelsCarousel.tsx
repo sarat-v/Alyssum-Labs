@@ -72,14 +72,14 @@ export function SectorPanelsCarousel() {
 
       <div
         ref={scrollRef}
-        className="flex items-stretch gap-4 overflow-x-auto pb-2 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [-mx-6] px-6 lg:mx-0 lg:grid lg:grid-cols-2 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
+        className="flex items-stretch gap-4 overflow-x-auto pb-2 snap-x snap-mandatory [-ms-overflow-style:none] scrollbar-none [-mx-6] px-6 lg:mx-0 lg:grid lg:grid-cols-2 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
       >
         {home.sectors.map((sector, index) => (
           <Link
             key={sector.id}
             href={sector.href}
             data-sector-index={index}
-            className="group surface-card-elevated flex min-h-112 w-[80vw] max-w-[340px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl transition-transform duration-500 hover:-translate-y-1 sm:w-[72vw] lg:min-h-0 lg:w-auto lg:max-w-none lg:snap-none"
+            className="group surface-card-elevated relative flex min-h-112 w-[80vw] max-w-[340px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl sm:w-[72vw] lg:min-h-0 lg:w-auto lg:max-w-none lg:snap-none"
           >
             <div className="relative aspect-16/10 w-full shrink-0 overflow-hidden bg-bg-surface">
               <Image

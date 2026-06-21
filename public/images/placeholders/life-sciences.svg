@@ -2,7 +2,7 @@
   <defs>
     <linearGradient id="ls-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F7F4EF"/>
-      <stop offset="100%" stop-color="#E3C9B8"/>
+      <stop offset="100%" stop-color="#DABDA9"/>
     </linearGradient>
     <radialGradient id="ls-glow" cx="50%" cy="45%" r="50%">
       <stop offset="0%" stop-color="#ABB69F" stop-opacity="0.55"/>

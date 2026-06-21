@@ -47,7 +47,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="surface-card-elevated rounded-2xl border-t-4 border-t-olive/80 p-10 text-center">
+      <div className="surface-card-elevated flex h-full w-full min-w-0 flex-col rounded-2xl border-t-4 border-t-olive/80 p-10 text-center">
         <p className="font-serif text-2xl text-text-primary">Thank you.</p>
         <p className="mt-3 text-text-secondary">
           Your enquiry has been sent. A confirmation email is on its way to you, and our team will
@@ -63,7 +63,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="surface-card-elevated rounded-2xl border-t-4 border-t-persian-orange/80 p-6 lg:p-8"
+      className="surface-card-elevated flex h-full w-full min-w-0 flex-col rounded-2xl border-t-4 border-t-accent-pe/80 p-6 lg:p-8"
     >
       <p className="mb-5 font-mono text-xs text-text-secondary">
         Enquiries are sent to{" "}
@@ -74,7 +74,7 @@ export function ContactForm() {
           {contactContent.email}
         </a>
       </p>
-      <div className="space-y-5">
+      <div className="flex flex-1 flex-col space-y-5">
         <Field label="Name" name="name" required disabled={status === "submitting"} />
         <Field label="Organisation" name="organisation" required disabled={status === "submitting"} />
         <Field label="Email" name="email" type="email" required disabled={status === "submitting"} />
@@ -99,7 +99,7 @@ export function ContactForm() {
             ))}
           </select>
         </div>
-        <div>
+        <div className="flex min-h-0 flex-1 flex-col">
           <label
             htmlFor="message"
             className="font-mono text-xs uppercase tracking-widest text-text-secondary"
@@ -112,7 +112,7 @@ export function ContactForm() {
             required
             rows={4}
             disabled={status === "submitting"}
-            className="mt-2 w-full resize-none border-b border-border-subtle bg-transparent py-2.5 text-text-primary outline-none transition-colors focus:border-accent-core disabled:opacity-60"
+            className="mt-2 min-h-[7.5rem] w-full flex-1 resize-none border-b border-border-subtle bg-transparent py-2.5 text-text-primary outline-none transition-colors focus:border-accent-core disabled:opacity-60 lg:min-h-[9rem]"
           />
         </div>
         <div className="rounded-xl border border-border-subtle/80 bg-bg-base/40 p-4">

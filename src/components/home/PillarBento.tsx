@@ -1,6 +1,62 @@
+ "use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { home } from "@/lib/content";
 
+const stackOffsets = [
+  { x: "0%", y: 0, scale: 1, opacity: 1, zIndex: 3 },
+  { x: "calc(-100% - 1.5rem)", y: 28, scale: 0.97, opacity: 0.96, zIndex: 2 },
+  { x: "calc(-200% - 3rem)", y: 56, scale: 0.94, opacity: 0.92, zIndex: 1 },
+] as const;
+
 export function PillarBento() {
+  const gridRef = useRef<HTMLDivElement | null>(null);
+  const scrollDirectionRef = useRef<"down" | "up">("down");
+  const isInView = useInView(gridRef, { amount: 0.35 });
+  const prefersReducedMotion = useReducedMotion();
+  const [canStack, setCanStack] = useState(false);
+  const [hasSettled, setHasSettled] = useState(prefersReducedMotion);
+  const [motionEnabled, setMotionEnabled] = useState(false);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setHasSettled(true);
+      return;
+    }
+
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        scrollDirectionRef.current = "down";
+      } else if (currentScrollY < lastScrollY) {
+        scrollDirectionRef.current = "up";
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prefersReducedMotion]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const sync = () => setCanStack(mediaQuery.matches);
+
+    sync();
+    mediaQuery.addEventListener("change", sync);
+    return () => mediaQuery.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!isInView || hasSettled) return;
+
+    const enteringFromHero = scrollDirectionRef.current === "down";
+    setMotionEnabled(enteringFromHero && canStack);
+    setHasSettled(true);
+  }, [canStack, hasSettled, isInView]);
+
   return (
     <section className="grain-overlay relative overflow-hidden pb-24 pt-10 lg:pb-32 lg:pt-16">
       {/* Soft ambient wash so backdrop-blur has depth to refract */}
@@ -27,11 +83,36 @@ export function PillarBento() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3 lg:mt-16">
+        <div ref={gridRef} className="mt-14 grid gap-6 md:grid-cols-3 lg:mt-16">
           {home.pillars.map((pillar, i) => (
-            <article
+            <motion.article
               key={pillar.title}
               className="surface-card-elevated relative flex min-h-68 flex-col rounded-2xl p-8 lg:p-9"
+              style={{
+                zIndex: hasSettled ? 1 : stackOffsets[i].zIndex,
+                transformOrigin: "top left",
+                willChange: "transform, opacity",
+              }}
+              initial={false}
+              animate={
+                hasSettled || !canStack
+                  ? { x: 0, y: 0, scale: 1, opacity: 1 }
+                  : {
+                      x: stackOffsets[i].x,
+                      y: stackOffsets[i].y,
+                      scale: stackOffsets[i].scale,
+                      opacity: stackOffsets[i].opacity,
+                    }
+              }
+              transition={
+                motionEnabled
+                  ? {
+                      duration: 0.98,
+                      delay: 0.18 + i * 0.08,
+                      ease: [0.16, 1, 0.3, 1],
+                    }
+                  : { duration: 0 }
+              }
             >
               <span className="relative z-1 inline-flex w-fit items-center rounded-full border border-white/50 bg-white/35 px-3 py-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-accent-muted shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md">
                 Pillar 0{i + 1}
@@ -42,7 +123,7 @@ export function PillarBento() {
               <p className="relative z-1 mt-4 flex-1 text-[0.92rem] leading-relaxed text-text-secondary">
                 {pillar.body}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

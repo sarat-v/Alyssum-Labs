@@ -15,9 +15,15 @@ export default function WhatWeDoPage() {
       <PageHero
         eyebrow="Capabilities"
         title="What We Do"
-        description={whatWeDo.intro}
-        band="warm"
+        accent="dual"
       />
+      <section className="section-band-neutral border-t border-border-subtle/70 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="section-reveal mx-auto max-w-4xl text-center font-serif text-2xl leading-snug text-text-primary heading-architectural lg:text-[2rem] lg:leading-[1.35]">
+            {whatWeDo.intro}
+          </p>
+        </div>
+      </section>
       <SectorTabs />
     </>
   );

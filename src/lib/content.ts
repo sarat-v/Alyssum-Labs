@@ -1,9 +1,9 @@
 export const site = {
   name: "Alyssum Labs",
-  legalName: "Alyssum Labs Pte. Ltd.",
+  legalName: "Alyssum Labs PTE Ltd",
   location: "Singapore",
-  email: "connect@alyssumlabs.com",
-  registeredOfficeAddress: ["190 Middle Road, #12-07, Fortune Centre, Singapore 188979"],
+  email: "info@alyssumlabs.com",
+  registeredOfficeAddress: ["190 Middle Road, #12-07, Fortune Centre", "Singapore 188979"],
   uen: "202610112W",
   linkedinCompanyUrl: "",
   tagline: "Where Intelligence Meets Consequence.",
@@ -15,8 +15,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/what-we-do", label: "What We Do" },
-  { href: "/our-model", label: "Our Model" },
-  { href: "/why-alyssum-labs", label: "Why Alyssum Labs" },
+  { href: "/our-approach", label: "Our Approach" },
   { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -42,7 +41,7 @@ export const home = {
     },
   ],
   statement:
-    "Alyssum Labs PTE Ltd is a Singapore-based technology intelligence company. We develop and deploy AI-driven systems and process frameworks across two sectors currently — life sciences and private capital — where the volume, velocity, and complexity of data has fundamentally outpaced conventional methods of analysis and decision-making.",
+    "Alyssum Labs is a Singapore-headquartered technology intelligence company. We develop and deploy AI-driven systems and process frameworks across two sectors currently — life sciences and private capital — where the volume, velocity, and complexity of data has fundamentally outpaced conventional methods of analysis and decision-making.",
   sectors: [
     {
       id: "life-sciences",
@@ -65,15 +64,17 @@ export const home = {
 
 export const about = {
   intro: [
-    "Alyssum Labs PTE Ltd is a Singapore-based technology intelligence company. We design and develop AI-driven systems for industries where data is dense, decisions carry weight, and the standards of governance are exacting — built on the view that the organisations operating in such environments require technology partners equipped to work at that level.",
+    "Founded in 2026. Built for the institutional long term.",
+    "Alyssum Labs PTE Ltd was established in Singapore as a technology intelligence company purpose-built for institutions whose work cannot be served well by general-purpose tools or transactional vendor relationships. Our role is to design and develop the AI-driven systems and process frameworks that allow such institutions to operate at the standard their work demands — with greater speed, greater precision, and greater reliability than would otherwise be available to them.",
+    "The company was founded with a particular ambition: to be a technology partner of consequence to a specific, deliberately chosen set of organisations — one whose work shapes how their programmes function rather than serving them from the outside.",
   ],
   founder: {
     name: "Sarat Vakkalanka",
     linkedinUrl: "https://www.linkedin.com/in/sarat-vakkalanka/",
     bio: [
       "Sarat is the founder of Alyssum Labs, leading the company's direction across technology development, strategic partnerships, and institutional positioning.",
-      "His professional focus lies in the design and application of intelligent systems within environments that demand both scientific depth and operational rigour — the kind of programmes where data structures are intricate, decision frameworks are consequential, and the standards of governance are non-negotiable.",
-      "He established Alyssum Labs to address a specific gap: the absence of technology partners capable of working at the structural centre of such programmes — not as external suppliers of tools, but as builders whose work shapes how the programmes function and evolve.",
+      "His background spans the design of intelligent systems and the application of advanced data techniques in complex operating environments — work shaped by both engineering rigour and the kind of considered judgement that programmes of consequence require.",
+      "He established Alyssum Labs to address a specific gap: the absence of technology partners capable of operating at the structural centre of such programmes — not as external suppliers of tools, but as builders whose contribution defines how the programmes function and evolve.",
       "He holds a Master's in Information Systems and Management from Carnegie Mellon University.",
     ],
     portrait: "/images/sarat-headshot.png",
@@ -90,20 +91,20 @@ export const about = {
       body: "Every commercial arrangement, technology system, and operational structure is established with compliance, documentation integrity, and audit readiness as foundational design parameters, rather than as functions retrofitted at later stages.",
     },
     {
-      title: "Built to Compound",
-      body: "The company is structured to grow in capability over time. Each platform we develop, each programme we engage with, and each partnership we form contributes to a body of intellectual depth and institutional knowledge that strengthens what we can deliver next.",
+      title: "Built to Last",
+      body: "The company is structured for institutional longevity. Capability deepens through every programme we engage with, partnership we form, and platform we develop — building the kind of institutional depth that sustains the work beyond any single engagement.",
     },
   ],
 };
 
 export const whatWeDo = {
   intro:
-    "Alyssum Labs develops AI-driven intelligence systems for complex, high-stakes programmes. We currently operate across two sectors.",
+    "What Alyssum Labs delivers, across two sectors currently, is the technology layer that allows partner programmes to operate at higher precision, greater speed, and the kind of reliability that complex work demands. The capabilities below describe what that layer looks like in practice — in life sciences, and in private capital.",
   lifeSciences: {
     title: "Life Sciences",
     intro: [
-      "The biological, chemical, and clinical data that informs drug discovery and development has grown beyond the reach of conventional analytical methods. Speed, precision, and the ability to interrogate large multimodal datasets are now as critical to programme success as the science itself.",
-      "Alyssum Labs provides the computational infrastructure that addresses this — designed to function as a core component of partner programmes from the outset.",
+      "Drug discovery and development now produces data at a scale that has overtaken conventional analytical methods. The ability to interrogate large multimodal datasets — quickly, precisely, and reliably — has become as critical to programme success as the underlying science.",
+      "Alyssum Labs provides the computational infrastructure that meets this requirement, designed into partner programmes from the outset.",
     ],
     capabilities: [
       {
@@ -127,8 +128,8 @@ export const whatWeDo = {
   privateCapital: {
     title: "Private Capital",
     intro: [
-      "Private capital operates on the depth and timeliness of the information available to it. As portfolios grow in complexity and stage diversity, the technology that supports this ecosystem has to evolve in step.",
-      "Alyssum Labs acts as an embedded technology development partner to this sector — building the intelligent platforms that allow private capital participants to manage their portfolios with structure, clarity, and confidence.",
+      "Private capital runs on the depth and timeliness of the information available to it. As portfolios diversify across stages, geographies, and asset types, the technology supporting this ecosystem has to keep pace.",
+      "Alyssum Labs acts as an embedded technology development partner to this sector, building the platforms that allow participants to manage complex portfolios with structure, clarity, and confidence.",
     ],
     capabilities: [
       {
@@ -151,9 +152,27 @@ export const whatWeDo = {
   },
 };
 
-export const ourModel = {
+export const ourApproach = {
   intro:
-    "The way Alyssum Labs operates is structured around three commitments: that engagements are built on a thorough understanding of the programme they serve, that the systems we develop continue to improve through use, and that every arrangement is constructed with the discipline required to sustain it over the long term.",
+    "The way Alyssum Labs operates is shaped by what technology work in our chosen industries actually require: a thorough understanding of the programme before engagement begins, systems that improve through use rather than degrade, and commercial arrangements designed to sustain the work over time rather than only to begin it. The sections below describe how this becomes operational practice — what differentiates our work, how we deliver it, and what it is oriented toward.",
+  differentiators: [
+    {
+      title: "Technology built for the domain, not adapted to it.",
+      body: "The systems we develop are designed against the specific data environments, decision structures, and regulatory contexts of the industries we serve. Domain specificity, in our work, is treated as a precondition rather than as a feature — and it is reflected in how systems are architected, validated, and refined.",
+    },
+    {
+      title: "Engineering depth over surface intelligence.",
+      body: "Our work is grounded in the engineering layer beneath the intelligence — the data architecture, computational frameworks, and integration logic that determine whether an AI system performs reliably within a serious operational environment. This depth is what allows our solutions to remain dependable as programmes scale and evolve.",
+    },
+    {
+      title: "Selective by design.",
+      body: "We work with a deliberately limited number of partners at any given time. The discipline of selectivity is what allows us to bring the depth of attention, technical resource, and institutional commitment that serious programmes require.",
+    },
+    {
+      title: "Led by senior, sector-specific judgement.",
+      body: "Alyssum Labs is led by individuals whose work has historically operated at the structural centre of complex, high-stakes programmes. This depth of judgement informs every engagement — in how problems are scoped, how solutions are designed, and how partnerships are sustained.",
+    },
+  ],
   howWeWork: [
     {
       title: "We begin with the programme.",
@@ -202,37 +221,13 @@ export const ourModel = {
   },
 };
 
-export const whyAlyssum = {
-  positioning: [
-    {
-      title: "Technology built for the domain, not adapted to it.",
-      body: "The systems we develop are designed against the specific data environments, decision structures, and regulatory contexts of the industries we serve. Domain specificity, in our work, is treated as a precondition rather than as a feature — and it is reflected in how systems are architected, validated, and refined.",
-    },
-    {
-      title: "Engineering depth over surface intelligence.",
-      body: "Our work is grounded in the engineering layer beneath the intelligence — the data architecture, computational frameworks, and integration logic that determine whether an AI system performs reliably within a serious operational environment. This depth is what allows our solutions to remain dependable as programmes scale and evolve.",
-    },
-    {
-      title: "Built for long-term value creation, on both sides.",
-      body: "Our engagements are structured around outcomes that take time to realise — and on commercial terms that move with the value created over that period. This orientation shapes the kind of work we take on, and the kind of partnerships we form.",
-    },
-    {
-      title: "Selective by design.",
-      body: "We work with a deliberately limited number of partners at any given time. The discipline of selectivity is what allows us to bring the depth of attention, technical resource, and institutional commitment that serious programmes require.",
-    },
-    {
-      title: "Led by senior, sector-specific judgement.",
-      body: "Alyssum Labs is led by individuals whose work has historically operated at the structural centre of complex, high-stakes programmes. This depth of judgement informs every engagement — in how problems are scoped, how solutions are designed, and how partnerships are sustained.",
-    },
-  ],
-};
-
 export const contact = {
   headline: "Work With Us.",
-  email: "connect@alyssumlabs.com",
+  email: "info@alyssumlabs.com",
   body: [
     "Alyssum Labs partners with organisations that are committed to placing intelligent technology at the structural centre of what they do — in life sciences, in private capital, and at the intersection of both.",
     "We welcome approaches from pharmaceutical and biotech companies seeking to elevate their discovery and development capability, and from organisations across the private capital ecosystem seeking to embed sophisticated technology infrastructure within their portfolio management.",
   ],
+  mapQuery: "190 Middle Road, Fortune Centre, Singapore 188979",
   interests: ["Life Sciences", "Private Capital", "Other"] as const,
 };

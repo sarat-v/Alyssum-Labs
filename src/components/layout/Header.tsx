@@ -83,8 +83,8 @@ export function Header() {
             className={clsx(
               "relative inline-flex items-center rounded-full border px-6 py-3 text-[0.96rem] font-medium transition-all duration-300 hover:scale-[1.02]",
               contactActive
-                ? "border-white/32 bg-emerald/88 text-off-white ring-2 ring-emerald/28 ring-offset-2 ring-offset-off-white backdrop-blur-md"
-                : "border-white/28 bg-emerald/84 text-off-white shadow-[0_12px_28px_-18px_rgba(28,63,64,0.75)] backdrop-blur-md hover:border-white/42 hover:bg-emerald/92",
+                ? "border-white/32 bg-emerald text-off-white ring-2 ring-emerald/28 ring-offset-2 ring-offset-off-white"
+                : "border-emerald bg-emerald text-off-white shadow-[0_12px_28px_-18px_rgba(28,62,64,0.75)] hover:border-white/32 hover:brightness-[1.03]",
             )}
           >
             Work With Us
@@ -153,7 +153,7 @@ export function Header() {
                   "mt-3 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-colors",
                   contactActive
                     ? "bg-emerald text-off-white ring-2 ring-emerald/20"
-                    : "bg-accent-core text-bg-base",
+                    : "bg-emerald text-off-white hover:brightness-[1.03]",
                 )}
               >
                 Work With Us

@@ -63,8 +63,14 @@ export function SectorTabs() {
 
   return (
     <>
-      <div className="sticky top-16 z-40 border-b border-border-subtle/80 section-band-neutral backdrop-blur-xl lg:top-20">
-        <div className="mx-auto flex max-w-7xl gap-2 px-6 py-4 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="tech-divider" aria-hidden />
+      </div>
+
+      <div
+        className="sticky top-16 z-40 border-b border-border-subtle/80 bg-off-white/95 backdrop-blur-md lg:top-20"
+      >
+        <div className="mx-auto flex w-full max-w-7xl gap-2 px-6 pt-5 pb-2.5 lg:px-8 lg:pt-6 lg:pb-3">
           {(
             [
               { id: "ls" as const, label: whatWeDo.lifeSciences.title },
@@ -76,7 +82,7 @@ export function SectorTabs() {
               type="button"
               onClick={() => selectTab(tab.id)}
               className={clsx(
-                "relative rounded-full px-5 py-2.5 text-sm transition-colors",
+                "relative inline-flex h-10 items-center justify-center rounded-full px-5 text-sm leading-none transition-colors",
                 active === tab.id
                   ? "text-emerald"
                   : "text-text-secondary hover:text-text-primary",
@@ -87,7 +93,7 @@ export function SectorTabs() {
                   layoutId="sector-pill"
                   className={clsx(
                     "absolute inset-0 rounded-full",
-                    tab.id === "ls" ? "bg-olive/50" : "bg-persian-orange/55",
+                    tab.id === "ls" ? "bg-olive/50" : "bg-accent-pe/40",
                   )}
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
@@ -108,12 +114,11 @@ export function SectorTabs() {
           <SectorSection
             id="life-sciences"
             accent="ls"
-            band="olive"
             title={whatWeDo.lifeSciences.title}
             intro={whatWeDo.lifeSciences.intro}
             capabilities={whatWeDo.lifeSciences.capabilities}
             banner={{
-              src: "/images/pipeline-sequence.png",
+              src: "/images/life-sciences-banner-v4.png",
               alt: "Abstract visualization of data resolving into structured intelligence",
               eyebrow: "Intelligence pipeline",
               title: "From multimodal data to translational clarity",
@@ -123,12 +128,11 @@ export function SectorTabs() {
           <SectorSection
             id="private-capital"
             accent="pe"
-            band="warm"
             title={whatWeDo.privateCapital.title}
             intro={whatWeDo.privateCapital.intro}
             capabilities={whatWeDo.privateCapital.capabilities}
             banner={{
-              src: "/images/private-equity.png",
+              src: "/images/private-capital-banner-v3.png",
               alt: "Abstract visualization of portfolio intelligence infrastructure",
               eyebrow: "Portfolio intelligence",
               title: "From fragmented data to portfolio clarity",
@@ -143,7 +147,6 @@ export function SectorTabs() {
 function SectorSection({
   id,
   accent,
-  band,
   title,
   intro,
   capabilities,
@@ -151,7 +154,6 @@ function SectorSection({
 }: {
   id: string;
   accent: "ls" | "pe";
-  band: "olive" | "warm";
   title: string;
   intro: string[];
   capabilities: { title: string; body: string }[];
@@ -162,15 +164,33 @@ function SectorSection({
     title: string;
   };
 }) {
-  const bandClass = band === "olive" ? "section-band-olive" : "section-band-warm";
+  const bandClass = accent === "ls" ? "section-band-ls-rich" : "section-band-pe-rich";
   const accentBorder =
-    accent === "ls" ? "border-t-olive/80" : "border-t-persian-orange/85";
+    accent === "ls" ? "border-t-olive/80" : "border-t-accent-pe/80";
+  const accentBorderLeft =
+    accent === "ls" ? "accent-border-left-olive" : "accent-border-left-warm";
+  const iconBadgeClass =
+    accent === "ls" ? "accent-icon-badge-olive" : "accent-icon-badge-warm";
 
   return (
-    <section id={id} className={clsx("scroll-mt-32", bandClass, "section-shell")}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionHeading eyebrow="Sector">{title}</SectionHeading>
-        <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-text-secondary lg:text-lg">
+    <section
+      id={id}
+      className={clsx(
+        "scroll-mt-32 relative overflow-hidden pb-24 pt-14 lg:pb-32 lg:pt-16",
+        bandClass,
+      )}
+    >
+      <div className="relative z-2 mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading eyebrow="Sector">
+          {title}
+        </SectionHeading>
+
+        <div
+          className={clsx(
+            "mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-text-secondary lg:text-lg",
+            accentBorderLeft,
+          )}
+        >
           {intro.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
@@ -178,45 +198,50 @@ function SectorSection({
 
         {banner && (
           <div className="section-reveal surface-card-elevated mt-16 overflow-hidden rounded-2xl">
-            <div className="relative aspect-[21/9] bg-bg-surface">
+            <div className="relative aspect-21/9 bg-bg-surface">
               <Image
                 src={banner.src}
                 alt={banner.alt}
                 fill
-                className="object-cover img-brand-tone"
+                className="object-cover"
                 sizes="(max-width: 1280px) 100vw, 1280px"
               />
             </div>
             <div className={clsx("border-t-[5px] px-8 py-6 lg:px-10 lg:py-8", accentBorder)}>
-              <p className="font-mono text-xs uppercase tracking-widest text-accent-muted">
-                {banner.eyebrow}
-              </p>
-              <p className="mt-2 max-w-2xl font-serif text-2xl leading-snug text-text-primary lg:text-[1.75rem]">
+              <p className="label-mono text-accent-muted">{banner.eyebrow}</p>
+              <p className="mt-2 max-w-2xl font-serif text-2xl leading-snug text-text-primary lg:text-[1.75rem] heading-architectural">
                 {banner.title}
               </p>
             </div>
           </div>
         )}
 
+        <div className="mt-14 hairline-divider-subtle" aria-hidden />
+
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-14">
           {capabilities.map((cap, i) => (
             <article
               key={cap.title}
               className={clsx(
-                "section-reveal group surface-card-elevated relative overflow-hidden rounded-2xl border-t-[4px] p-6 transition-all duration-500 hover:-translate-y-1 lg:p-8",
-                accentBorder,
+                "group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 lg:p-8",
+                accent === "ls" ? "surface-card-plain-ls" : "surface-card-plain-pe",
               )}
             >
-              <p className="font-mono text-xs text-accent-muted">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-3 font-serif text-xl text-text-primary">
-                {cap.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                {cap.body}
-              </p>
-              <div className="mt-6 h-px w-12 bg-linear-to-r from-olive/40 to-persian-orange/40 transition-all duration-500 group-hover:w-full" />
+              <div className="flex items-start gap-3">
+                <span className={clsx("accent-icon-badge", iconBadgeClass)}>
+                  <span className="font-mono text-[11px] tracking-[0.06em]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-serif text-xl text-text-primary heading-architectural">
+                    {cap.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                    {cap.body}
+                  </p>
+                </div>
+              </div>
             </article>
           ))}
         </div>

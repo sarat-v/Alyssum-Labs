@@ -17,12 +17,12 @@ export function HeroInterferenceBackground() {
       />
       <MeshGradient
         className="absolute inset-0 h-full w-full opacity-78"
-        colors={["#f7f4ef", "#1c3f40", "#3d9f8b", "#7fc49c", "#e3c9b8", "#e7a97c"]}
+        colors={["#f7f4ef", "#1c3e40", "#3d9f8b", "#7fc49c", "#dabda9", "#9a7b65"]}
         speed={0.52}
       />
       <MeshGradient
         className="absolute inset-0 h-full w-full opacity-38 mix-blend-multiply"
-        colors={["#f7f4ef", "#1c3f40", "#7cbfab", "#dfb89d"]}
+        colors={["#f7f4ef", "#1c3e40", "#7cbfab", "#dfb89d"]}
         speed={0.68}
       />
 

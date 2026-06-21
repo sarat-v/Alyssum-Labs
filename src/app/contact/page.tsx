@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { ContactSidebar } from "@/components/contact/ContactSidebar";
 import { PageHero } from "@/components/ui/PageHero";
-import { contact, site } from "@/lib/content";
+import { contact } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,37 +13,24 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Get in Touch" title={contact.headline} band="warm" />
+      <PageHero eyebrow="Get in Touch" title={contact.headline} accent="dual" />
 
-      <section className="section-band-neutral section-shell">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-x-16 lg:gap-y-12 xl:gap-x-20">
-            <div className="max-w-xl">
-              <div className="space-y-6 text-base leading-relaxed text-text-secondary lg:text-lg">
-                {contact.body.map((p) => (
-                  <p key={p.slice(0, 32)}>{p}</p>
-                ))}
-              </div>
-              <div className="surface-card-elevated mt-10 rounded-2xl border-t-[4px] border-t-olive/80 p-7">
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-muted">
-                  Office
-                </p>
-                <p className="mt-4 font-serif text-xl text-text-primary">
-                  {site.legalName}
-                </p>
-                <p className="mt-1 text-text-secondary">{site.location}</p>
-                <p className="mt-3">
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="text-accent-core transition-opacity hover:opacity-80"
-                  >
-                    {contact.email}
-                  </a>
-                </p>
-              </div>
-            </div>
+      <section className="grain-overlay section-band-neutral section-shell relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(ellipse 48% 36% at 10% 42%, rgba(171,182,159,0.1), transparent 52%),
+              radial-gradient(ellipse 42% 32% at 90% 78%, rgba(218,189,169,0.12), transparent 48%)
+            `,
+          }}
+          aria-hidden
+        />
 
-            <div className="lg:max-w-lg lg:justify-self-end lg:w-full">
+        <div className="relative z-2 mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+            <ContactSidebar />
+            <div className="flex w-full min-w-0 flex-col">
               <ContactForm />
             </div>
           </div>

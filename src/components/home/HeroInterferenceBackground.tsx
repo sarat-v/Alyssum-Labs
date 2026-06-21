@@ -13,17 +13,17 @@ export function HeroInterferenceBackground() {
       <MeshGradient
         className="absolute inset-0 h-full w-full"
         colors={["#f7f4ef", "#b5d5c8", "#f0c6aa", "#91cfb6", "#78b8ab", "#f6b995"]}
-        speed={0.62}
+        speed={0.32}
       />
       <MeshGradient
-        className="absolute inset-0 h-full w-full opacity-78"
+        className="absolute inset-0 h-full w-full opacity-70"
         colors={["#f7f4ef", "#1c3e40", "#3d9f8b", "#7fc49c", "#dabda9", "#9a7b65"]}
-        speed={0.52}
+        speed={0.28}
       />
       <MeshGradient
-        className="absolute inset-0 h-full w-full opacity-38 mix-blend-multiply"
+        className="absolute inset-0 h-full w-full opacity-30 mix-blend-multiply"
         colors={["#f7f4ef", "#1c3e40", "#7cbfab", "#dfb89d"]}
-        speed={0.68}
+        speed={0.34}
       />
 
       <div className="hero-vibrance-right absolute right-[-10%] top-[-4%] h-[98%] w-[68%] rounded-full bg-[radial-gradient(circle,rgba(122,189,168,0.56)_0%,rgba(171,182,159,0.34)_32%,rgba(227,201,184,0.22)_56%,rgba(227,201,184,0)_80%)] blur-[62px]" />
@@ -33,11 +33,11 @@ export function HeroInterferenceBackground() {
 
       <style jsx>{`
         .hero-vibrance-right {
-          animation: hero-vibrance-shift 6.8s ease-in-out infinite alternate;
+          animation: hero-vibrance-shift 10s ease-in-out infinite alternate;
         }
 
         .hero-vibrance-right-soft {
-          animation: hero-vibrance-pulse 5.2s ease-in-out infinite alternate;
+          animation: hero-vibrance-pulse 8s ease-in-out infinite alternate;
         }
 
         @keyframes hero-vibrance-shift {

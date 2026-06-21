@@ -283,20 +283,19 @@ html {
 .surface-card-elevated {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(28, 63, 64, 0.1);
   background: linear-gradient(
     155deg,
-    rgba(255, 255, 255, 0.78) 0%,
-    rgba(255, 255, 255, 0.42) 48%,
-    rgba(247, 244, 239, 0.28) 100%
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.78) 52%,
+    rgba(247, 244, 239, 0.72) 100%
   );
   box-shadow:
-    0 10px 36px -10px rgba(28, 63, 64, 0.14),
-    0 2px 10px rgba(28, 63, 64, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.28);
-  -webkit-backdrop-filter: blur(24px) saturate(1.45);
-  backdrop-filter: blur(24px) saturate(1.45);
+    0 8px 28px -14px rgba(28, 63, 64, 0.18),
+    0 1px 8px rgba(28, 63, 64, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(8px) saturate(1.08);
+  backdrop-filter: blur(8px) saturate(1.08);
 }
 
 .surface-card-elevated::before {
@@ -307,9 +306,9 @@ html {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0.08) 32%,
-    transparent 58%
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.04) 34%,
+    transparent 62%
   );
 }
 
@@ -319,7 +318,7 @@ html {
   inset: 1px;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 
 /* Neutral glass — opaque white, no backdrop bleed, matte finish */
@@ -349,31 +348,25 @@ html {
 .surface-card-elevated.surface-card-tint-ls {
   background: linear-gradient(
     155deg,
-    rgba(255, 255, 255, 0.68) 0%,
-    rgba(171, 182, 159, 0.38) 40%,
-    rgba(127, 198, 178, 0.22) 68%,
-    rgba(171, 182, 159, 0.28) 100%
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(238, 237, 229, 0.92) 48%,
+    rgba(213, 212, 196, 0.72) 100%
   );
   box-shadow:
-    0 10px 36px -10px rgba(28, 63, 64, 0.14),
-    0 2px 10px rgba(28, 63, 64, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.88),
-    inset 0 -1px 0 rgba(171, 182, 159, 0.35);
+    0 8px 28px -14px rgba(28, 63, 64, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .surface-card-elevated.surface-card-tint-pe {
   background: linear-gradient(
     155deg,
-    rgba(255, 255, 255, 0.68) 0%,
-    rgba(218, 189, 169, 0.44) 42%,
-    rgba(240, 229, 217, 0.28) 68%,
-    rgba(218, 189, 169, 0.32) 100%
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(240, 229, 217, 0.9) 48%,
+    rgba(218, 189, 169, 0.58) 100%
   );
   box-shadow:
-    0 10px 36px -10px rgba(28, 63, 64, 0.14),
-    0 2px 10px rgba(28, 63, 64, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.88),
-    inset 0 -1px 0 rgba(218, 189, 169, 0.4);
+    0 8px 28px -14px rgba(28, 63, 64, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .surface-card-dark {

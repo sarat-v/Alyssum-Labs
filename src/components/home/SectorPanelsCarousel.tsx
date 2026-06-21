@@ -9,11 +9,11 @@ import { home } from "@/lib/content";
 const sectorStyles = {
   ls: {
     border: "border-t-olive/80",
-    tint: "",
+    tint: "surface-card-tint-ls",
   },
   pe: {
     border: "border-t-accent-pe/85",
-    tint: "",
+    tint: "surface-card-tint-pe",
   },
 } as const;
 

@@ -107,7 +107,6 @@ export default function OurApproachPage() {
 
       <section className="section-band-neutral relative pb-20 pt-6 lg:pb-28 lg:pt-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="tech-divider mb-8 lg:mb-10" aria-hidden />
           <div className="grid gap-5 lg:grid-cols-3">
             {ourApproach.howWeWork.map((item, i) => (
               <article
@@ -132,7 +131,7 @@ export default function OurApproachPage() {
         </div>
       </section>
 
-      {/* How We Engage — dark olive heading strip + neutral cards */}
+      {/* How We Engage — dark olive heading strip + warm commercial cues */}
       <section className="grain-overlay section-band-about-foundation relative overflow-hidden">
         <div className="relative z-1 pt-14 pb-10 lg:pt-16 lg:pb-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -145,15 +144,14 @@ export default function OurApproachPage() {
 
       <section className="section-band-neutral relative pb-20 pt-6 lg:pb-28 lg:pt-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="tech-divider mb-8 lg:mb-10" aria-hidden />
           <div className="grid gap-5 lg:grid-cols-3">
             {ourApproach.howWeEngage.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-olive/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
+                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-accent-pe/75 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <span className="accent-icon-badge accent-icon-badge-olive">
+                <span className="accent-icon-badge accent-icon-badge-warm">
                   <span className="font-mono text-[11px] tracking-[0.06em]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -170,13 +168,13 @@ export default function OurApproachPage() {
         </div>
       </section>
 
-      {/* Outcomes — soft sage close */}
-      <section className="section-band-ls-soft py-14 lg:py-20">
+      {/* Outcomes — warm close for commercial structure */}
+      <section className="section-band-pe-rich border-t border-accent-pe/25 py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading eyebrow="Aligned to What We Build">
             Engagements structured for long-term value.
           </SectionHeading>
-          <p className="section-reveal mt-4 max-w-3xl accent-border-left-olive font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
+          <p className="section-reveal mt-4 max-w-3xl accent-border-left-warm font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
             {ourApproach.outcomes.framing}
           </p>
 
@@ -184,7 +182,7 @@ export default function OurApproachPage() {
             {ourApproach.outcomes.items.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal surface-card-flat-on-sage rounded-2xl p-7 lg:p-8"
+                className="section-reveal surface-card-flat-on-warm rounded-2xl p-7 lg:p-8"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <h3 className="font-serif text-2xl text-text-primary heading-architectural">{item.title}</h3>

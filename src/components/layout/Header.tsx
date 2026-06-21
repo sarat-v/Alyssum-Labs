@@ -17,6 +17,7 @@ export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [pendingDesktopHref, setPendingDesktopHref] = useState<string | null>(null);
   const contactActive = isNavActive(pathname, "/contact");
 
   useEffect(() => {
@@ -25,6 +26,10 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setPendingDesktopHref(null);
+  }, [pathname]);
 
   return (
     <header
@@ -49,12 +54,15 @@ export function Header() {
 
         <nav className="hidden items-center gap-1 rounded-full border border-white/65 bg-off-white/58 p-1.5 shadow-[0_14px_34px_-24px_rgba(28,63,64,0.52)] backdrop-blur-xl lg:flex">
           {navLinks.map((link) => {
-            const active = isNavActive(pathname, link.href);
+            const active =
+              pendingDesktopHref === link.href ||
+              (pendingDesktopHref === null && isNavActive(pathname, link.href));
 
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setPendingDesktopHref(link.href)}
                 aria-current={active ? "page" : undefined}
                 className={clsx(
                   "group relative rounded-full border border-transparent px-4 py-2.5 text-[0.94rem] tracking-[0.01em] transition-all duration-300 xl:px-5",

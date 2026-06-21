@@ -3,7 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, site } from "@/lib/content";
 import { clsx } from "clsx";
@@ -13,14 +19,61 @@ function isNavActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+interface PillRect {
+  left: number;
+  width: number;
+}
+
 export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [pendingDesktopHref, setPendingDesktopHref] = useState<string | null>(null);
-  const desktopNavTimerRef = useRef<number | null>(null);
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+  const navTimerRef = useRef<number | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const linkRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+  const [pillRect, setPillRect] = useState<PillRect | null>(null);
+  const [pillReady, setPillReady] = useState(false);
+
   const contactActive = isNavActive(pathname, "/contact");
+
+  const activeHref =
+    pendingHref ?? navLinks.find((l) => isNavActive(pathname, l.href))?.href ?? null;
+
+  const measurePill = useCallback(() => {
+    if (!activeHref || !navRef.current) {
+      setPillRect(null);
+      return;
+    }
+    const linkEl = linkRefs.current.get(activeHref);
+    if (!linkEl) {
+      setPillRect(null);
+      return;
+    }
+    const navBox = navRef.current.getBoundingClientRect();
+    const linkBox = linkEl.getBoundingClientRect();
+    setPillRect({
+      left: linkBox.left - navBox.left,
+      width: linkBox.width,
+    });
+  }, [activeHref]);
+
+  useLayoutEffect(() => {
+    measurePill();
+  }, [measurePill]);
+
+  useEffect(() => {
+    if (!pillReady && pillRect) {
+      requestAnimationFrame(() => setPillReady(true));
+    }
+  }, [pillRect, pillReady]);
+
+  useEffect(() => {
+    const onResize = () => measurePill();
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, [measurePill]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -30,14 +83,12 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    setPendingDesktopHref(null);
+    setPendingHref(null);
   }, [pathname]);
 
   useEffect(() => {
     return () => {
-      if (desktopNavTimerRef.current !== null) {
-        window.clearTimeout(desktopNavTimerRef.current);
-      }
+      if (navTimerRef.current !== null) window.clearTimeout(navTimerRef.current);
     };
   }, []);
 
@@ -57,16 +108,14 @@ export function Header() {
     }
 
     event.preventDefault();
-    setPendingDesktopHref(href);
+    setPendingHref(href);
 
-    if (desktopNavTimerRef.current !== null) {
-      window.clearTimeout(desktopNavTimerRef.current);
-    }
+    if (navTimerRef.current !== null) window.clearTimeout(navTimerRef.current);
 
-    desktopNavTimerRef.current = window.setTimeout(() => {
+    navTimerRef.current = window.setTimeout(() => {
       router.push(href);
-      desktopNavTimerRef.current = null;
-    }, 120);
+      navTimerRef.current = null;
+    }, 150);
   }
 
   return (
@@ -90,34 +139,44 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-white/65 bg-off-white/58 p-1.5 shadow-[0_14px_34px_-24px_rgba(28,63,64,0.52)] backdrop-blur-xl lg:flex">
+        <nav
+          ref={navRef}
+          className="relative hidden items-center gap-1 rounded-full border border-white/65 bg-off-white/58 p-1.5 shadow-[0_14px_34px_-24px_rgba(28,63,64,0.52)] backdrop-blur-xl lg:flex"
+        >
+          {pillRect && (
+            <motion.span
+              className="pointer-events-none absolute top-1.5 bottom-1.5 rounded-full bg-emerald/10 ring-1 ring-emerald/18 backdrop-blur-md"
+              initial={false}
+              animate={{ left: pillRect.left, width: pillRect.width }}
+              transition={
+                pillReady
+                  ? { type: "spring", stiffness: 400, damping: 32 }
+                  : { duration: 0 }
+              }
+            />
+          )}
+
           {navLinks.map((link) => {
-            const active =
-              pendingDesktopHref === link.href ||
-              (pendingDesktopHref === null && isNavActive(pathname, link.href));
+            const active = activeHref === link.href;
 
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                onMouseDown={() => setPendingDesktopHref(link.href)}
+                ref={(el) => {
+                  if (el) linkRefs.current.set(link.href, el);
+                  else linkRefs.current.delete(link.href);
+                }}
                 onClick={(event) => handleDesktopNavClick(event, link.href)}
                 aria-current={active ? "page" : undefined}
                 className={clsx(
-                  "group relative rounded-full border border-transparent px-4 py-2.5 text-[0.94rem] tracking-[0.01em] transition-all duration-300 xl:px-5",
+                  "group relative z-10 rounded-full border border-transparent px-4 py-2.5 text-[0.94rem] tracking-[0.01em] transition-colors duration-300 xl:px-5",
                   active
                     ? "font-medium text-text-primary"
-                    : "text-text-secondary hover:border-emerald/20 hover:bg-off-white/40 hover:text-text-primary hover:backdrop-blur-lg",
+                    : "text-text-secondary hover:text-text-primary",
                 )}
               >
-                {active ? (
-                  <motion.span
-                    layoutId="header-nav-indicator"
-                    className="absolute inset-0 rounded-full bg-emerald/10 ring-1 ring-emerald/18 backdrop-blur-md"
-                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                  />
-                ) : null}
-                <span className="relative z-10">{link.label}</span>
+                {link.label}
               </Link>
             );
           })}

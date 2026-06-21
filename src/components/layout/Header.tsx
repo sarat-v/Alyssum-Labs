@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, site } from "@/lib/content";
 import { clsx } from "clsx";
@@ -15,9 +15,11 @@ function isNavActive(pathname: string, href: string) {
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [pendingDesktopHref, setPendingDesktopHref] = useState<string | null>(null);
+  const desktopNavTimerRef = useRef<number | null>(null);
   const contactActive = isNavActive(pathname, "/contact");
 
   useEffect(() => {
@@ -30,6 +32,42 @@ export function Header() {
   useEffect(() => {
     setPendingDesktopHref(null);
   }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (desktopNavTimerRef.current !== null) {
+        window.clearTimeout(desktopNavTimerRef.current);
+      }
+    };
+  }, []);
+
+  function handleDesktopNavClick(
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    setPendingDesktopHref(href);
+
+    if (desktopNavTimerRef.current !== null) {
+      window.clearTimeout(desktopNavTimerRef.current);
+    }
+
+    desktopNavTimerRef.current = window.setTimeout(() => {
+      router.push(href);
+      desktopNavTimerRef.current = null;
+    }, 120);
+  }
 
   return (
     <header
@@ -62,7 +100,8 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setPendingDesktopHref(link.href)}
+                onMouseDown={() => setPendingDesktopHref(link.href)}
+                onClick={(event) => handleDesktopNavClick(event, link.href)}
                 aria-current={active ? "page" : undefined}
                 className={clsx(
                   "group relative rounded-full border border-transparent px-4 py-2.5 text-[0.94rem] tracking-[0.01em] transition-all duration-300 xl:px-5",

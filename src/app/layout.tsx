@@ -32,10 +32,10 @@ export const metadata: Metadata = {
   ),
   icons: {
     icon: [
-      { url: "/logo-mark.png", type: "image/png", sizes: "256x256" },
+      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
       { url: "/icon-32.png", type: "image/png", sizes: "32x32" },
     ],
-    shortcut: ["/logo-mark.png"],
+    shortcut: ["/icon-32.png"],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   title: {

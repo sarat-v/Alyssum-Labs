@@ -185,24 +185,24 @@ export default function OurApproachPage() {
 
       <section className="section-band-neutral relative pb-20 pt-6 lg:pb-28 lg:pt-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <p className="section-reveal max-w-3xl font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
+          <p className="section-reveal max-w-3xl text-lg leading-relaxed text-text-secondary lg:text-xl">
             {ourApproach.outcomes.framing}
           </p>
 
-          <div className="mt-10 grid gap-8 border-t border-border-subtle/70 pt-10 sm:grid-cols-3 lg:mt-12 lg:gap-12 lg:pt-12">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3 lg:mt-12">
             {ourApproach.outcomes.items.map((item, i) => (
-              <div
+              <article
                 key={item.title}
-                className="section-reveal"
+                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-olive/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <h3 className="font-serif text-2xl leading-snug text-text-primary heading-architectural">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-text-secondary">
+                <p className="mt-4 flex-1 text-base leading-relaxed text-text-secondary">
                   {item.body}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>

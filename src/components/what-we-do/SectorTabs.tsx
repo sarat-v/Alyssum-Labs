@@ -197,7 +197,12 @@ function SectorSection({
         </div>
 
         {banner && (
-          <div className="section-reveal surface-card-elevated mt-16 overflow-hidden rounded-2xl">
+          <div
+            className={clsx(
+              "section-reveal surface-card-elevated mt-16 overflow-hidden rounded-2xl",
+              accent === "ls" ? "surface-card-tint-ls" : "surface-card-tint-pe",
+            )}
+          >
             <div className="relative aspect-21/9 bg-bg-surface">
               <Image
                 src={banner.src}

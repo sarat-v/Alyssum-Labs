@@ -131,7 +131,7 @@ export default function OurApproachPage() {
         </div>
       </section>
 
-      {/* How We Engage — dark olive heading strip + warm commercial cues */}
+      {/* How We Engage — dark olive heading strip + neutral cards */}
       <section className="grain-overlay section-band-about-foundation relative overflow-hidden">
         <div className="relative z-1 pt-14 pb-10 lg:pt-16 lg:pb-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -148,10 +148,10 @@ export default function OurApproachPage() {
             {ourApproach.howWeEngage.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-accent-pe/75 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
+                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-olive/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <span className="accent-icon-badge accent-icon-badge-warm">
+                <span className="accent-icon-badge accent-icon-badge-olive">
                   <span className="font-mono text-[11px] tracking-[0.06em]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -168,25 +168,39 @@ export default function OurApproachPage() {
         </div>
       </section>
 
-      {/* Outcomes — warm close for commercial structure */}
-      <section className="section-band-pe-rich border-t border-accent-pe/25 py-14 lg:py-20">
+      {/* Aligned to What We Build — dark olive heading strip + neutral cards */}
+      <section className="grain-overlay section-band-about-foundation relative overflow-hidden">
+        <div className="relative z-1 pt-14 pb-10 lg:pt-16 lg:pb-12">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <SectionHeading eyebrow="Aligned to What We Build" tone="light">
+              Engagements structured for long-term value.
+            </SectionHeading>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-band-neutral relative pb-20 pt-6 lg:pb-28 lg:pt-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionHeading eyebrow="Aligned to What We Build">
-            Engagements structured for long-term value.
-          </SectionHeading>
-          <p className="section-reveal mt-4 max-w-3xl accent-border-left-warm font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
+          <p className="section-reveal mx-auto max-w-3xl text-center font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
             {ourApproach.outcomes.framing}
           </p>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3 lg:mt-10">
+          <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-3">
             {ourApproach.outcomes.items.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal surface-card-flat-on-warm rounded-2xl p-7 lg:p-8"
+                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-olive/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <h3 className="font-serif text-2xl text-text-primary heading-architectural">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-text-secondary lg:text-base">
+                <span className="accent-icon-badge accent-icon-badge-olive">
+                  <span className="font-mono text-[11px] tracking-[0.06em]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </span>
+                <h3 className="mt-4 font-serif text-2xl leading-snug text-text-primary heading-architectural">
+                  {item.title}
+                </h3>
+                <p className="mt-4 flex-1 text-base leading-relaxed text-text-secondary">
                   {item.body}
                 </p>
               </article>

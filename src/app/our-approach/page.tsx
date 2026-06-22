@@ -131,7 +131,7 @@ export default function OurApproachPage() {
         </div>
       </section>
 
-      {/* How We Engage — dark olive heading strip + neutral cards */}
+      {/* How We Engage — dark olive heading strip + stacked narrative rows */}
       <section className="grain-overlay section-band-about-foundation relative overflow-hidden">
         <div className="relative z-1 pt-14 pb-10 lg:pt-16 lg:pb-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -144,31 +144,35 @@ export default function OurApproachPage() {
 
       <section className="section-band-neutral relative pb-20 pt-6 lg:pb-28 lg:pt-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="space-y-5">
             {ourApproach.howWeEngage.map((item, i) => (
               <article
                 key={item.title}
-                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-olive/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
-                style={{ animationDelay: `${i * 80}ms` }}
+                className="section-reveal surface-card-flat rounded-2xl p-8 lg:p-10"
+                style={{ animationDelay: `${i * 60}ms` }}
               >
-                <span className="accent-icon-badge accent-icon-badge-olive">
-                  <span className="font-mono text-[11px] tracking-[0.06em]">
-                    {String(i + 1).padStart(2, "0")}
+                <div className="flex items-start gap-4">
+                  <span className="accent-icon-badge accent-icon-badge-olive shrink-0">
+                    <span className="font-mono text-[11px] tracking-[0.06em]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </span>
-                </span>
-                <h3 className="mt-4 font-serif text-xl text-text-primary heading-architectural lg:text-2xl">
-                  {item.title}
-                </h3>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-text-secondary lg:text-base lg:leading-[1.7]">
-                  {item.body}
-                </p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-serif text-2xl text-text-primary heading-architectural lg:text-[1.75rem] lg:leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-base leading-relaxed text-text-secondary">
+                      {item.body}
+                    </p>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Aligned to What We Build — dark olive heading strip + neutral cards */}
+      {/* Aligned to What We Build — editorial close with minimal outcome labels */}
       <section className="grain-overlay section-band-about-foundation relative overflow-hidden">
         <div className="relative z-1 pt-14 pb-10 lg:pt-16 lg:pb-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -181,29 +185,24 @@ export default function OurApproachPage() {
 
       <section className="section-band-neutral relative pb-20 pt-6 lg:pb-28 lg:pt-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <p className="section-reveal mx-auto max-w-3xl text-center font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
+          <p className="section-reveal max-w-3xl font-serif text-lg italic leading-relaxed text-text-secondary lg:text-xl">
             {ourApproach.outcomes.framing}
           </p>
 
-          <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 border-t border-border-subtle/70 pt-10 sm:grid-cols-3 lg:mt-12 lg:gap-12 lg:pt-12">
             {ourApproach.outcomes.items.map((item, i) => (
-              <article
+              <div
                 key={item.title}
-                className="section-reveal surface-card-flat flex flex-col rounded-2xl border-t-4 border-t-olive/80 p-8 transition-transform duration-500 hover:-translate-y-1 lg:p-9"
+                className="section-reveal"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <span className="accent-icon-badge accent-icon-badge-olive">
-                  <span className="font-mono text-[11px] tracking-[0.06em]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </span>
-                <h3 className="mt-4 font-serif text-2xl leading-snug text-text-primary heading-architectural">
+                <h3 className="font-serif text-2xl leading-snug text-text-primary heading-architectural">
                   {item.title}
                 </h3>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-text-secondary">
+                <p className="mt-3 text-base leading-relaxed text-text-secondary">
                   {item.body}
                 </p>
-              </article>
+              </div>
             ))}
           </div>
         </div>

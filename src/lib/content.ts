@@ -87,9 +87,9 @@ export const about = {
       name: "Dr. Swaroop Vakkalanka",
       role: "Leadership",
       bio: [
-        "Swaroop Vakkalanka is a renowned pharmaceutical R&D professional with deep experience in research and strategy management. He has led diversified scientific teams from drug design through clinical development, playing a pivotal role in bringing 18 NCEs into clinical development from concept.",
-        "He served in the R&D divisions of leading Indian pharmaceutical companies before founding Rhizen Pharmaceuticals SA. He led R&D teams on several out-licensing deals across oncology and inflammation, pain, and metabolic disorders — with cumulative deal value exceeding $1.5 billion.",
-        "Swaroop holds a Ph.D. in Pharmaceutical Sciences from Andhra University, India.",
+        "Swaroop Vakkalanka is a renowned pharmaceutical R&D professional with deep experience in research and strategy management. He has led diversified scientific teams from drug design through clinical development, playing a pivotal role in bringing 18 NCEs into clinical development from concept in the fields of immune-inflammation, metabolic disorders, pain, and oncology.",
+        "He served in the R&D divisions of leading Indian pharmaceutical companies, leading R&D teams on several out-licensing deals with a cumulative deal value exceeding $1.5 billion.",
+        "In addition to Alyssum Labs, Swaroop is also the founder of Rhizen Pharmaceuticals AG, Switzerland — a drug discovery and development company with a deep portfolio covering global IP. He holds a Ph.D. in Pharmaceutical Sciences from Andhra University, India.",
       ],
       portrait: "/images/swaroop-headshot.jpg",
       portraitWidth: 774,

@@ -70,6 +70,7 @@ export const about = {
   ],
   founder: {
     name: "Sarat Vakkalanka",
+    role: "Founder",
     linkedinUrl: "https://www.linkedin.com/in/sarat-vakkalanka/",
     bio: [
       "Sarat is the founder of Alyssum Labs, leading the company's direction across technology development, strategic partnerships, and institutional positioning.",
@@ -81,6 +82,20 @@ export const about = {
     portraitWidth: 1066,
     portraitHeight: 1052,
   },
+  leadership: [
+    {
+      name: "Dr. Swaroop Vakkalanka",
+      role: "Leadership",
+      bio: [
+        "Swaroop Vakkalanka is a renowned pharmaceutical R&D professional with deep experience in research and strategy management. He has led diversified scientific teams from drug design through clinical development, playing a pivotal role in bringing 18 NCEs into clinical development from concept.",
+        "He served in the R&D divisions of leading Indian pharmaceutical companies before founding Rhizen Pharmaceuticals SA. He led R&D teams on several out-licensing deals across oncology and inflammation, pain, and metabolic disorders — with cumulative deal value exceeding $1.5 billion.",
+        "Swaroop holds a Ph.D. in Pharmaceutical Sciences from Andhra University, India.",
+      ],
+      portrait: "/images/swaroop-headshot.jpg",
+      portraitWidth: 774,
+      portraitHeight: 1024,
+    },
+  ],
   foundation: [
     {
       title: "Singapore Headquarters",

@@ -85,7 +85,7 @@ export const about = {
   leadership: [
     {
       name: "Dr. Swaroop Vakkalanka",
-      role: "Leadership",
+      role: "Executive in Residence",
       bio: [
         "Swaroop Vakkalanka is a renowned pharmaceutical R&D professional with deep experience in research and strategy management. He has led diversified scientific teams from drug design through clinical development, playing a pivotal role in bringing 18 NCEs into clinical development from concept in the fields of immune-inflammation, metabolic disorders, pain, and oncology.",
         "He served in the R&D divisions of leading Indian pharmaceutical companies, leading R&D teams on several out-licensing deals with a cumulative deal value exceeding $1.5 billion.",

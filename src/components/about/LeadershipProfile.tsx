@@ -57,17 +57,18 @@ export function LeadershipProfile({
       </div>
 
       <div className="section-reveal mt-10 flex flex-col gap-10 sm:flex-row sm:items-start sm:gap-14 lg:mt-12 lg:gap-16">
-        <figure className="mx-auto shrink-0 sm:mx-0">
-          <Image
-            src={leader.portrait}
-            alt={leader.name}
-            width={leader.portraitWidth}
-            height={leader.portraitHeight}
-            className="h-auto w-64 rounded-2xl ring-1 ring-olive/25 sm:w-72 lg:w-[300px]"
-            sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 300px"
-            priority={priority}
-            unoptimized={isSvg}
-          />
+        <figure className="mx-auto w-64 shrink-0 overflow-hidden rounded-2xl ring-1 ring-olive/25 sm:mx-0 sm:w-72 lg:w-[300px]">
+          <div className="relative aspect-4/5 w-full">
+            <Image
+              src={leader.portrait}
+              alt={leader.name}
+              fill
+              className="object-cover object-[center_18%]"
+              sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 300px"
+              priority={priority}
+              unoptimized={isSvg}
+            />
+          </div>
         </figure>
         <div className="min-w-0 flex-1 space-y-5 sm:pt-2 accent-border-left-olive">
           {leader.bio.map((paragraph) => (

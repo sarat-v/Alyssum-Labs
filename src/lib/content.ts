@@ -70,7 +70,7 @@ export const about = {
   ],
   founder: {
     name: "Sarat Vakkalanka",
-    role: "Founder",
+    role: "Founder, Director",
     linkedinUrl: "https://www.linkedin.com/in/sarat-vakkalanka/",
     bio: [
       "Sarat is the founder of Alyssum Labs, leading the company's direction across technology development, strategic partnerships, and institutional positioning.",
@@ -85,7 +85,7 @@ export const about = {
   leadership: [
     {
       name: "Dr. Swaroop Vakkalanka",
-      role: "Executive in Residence",
+      role: "Executive in Residence, Director",
       bio: [
         "Swaroop Vakkalanka is a renowned pharmaceutical R&D professional with deep experience in research and strategy management. He has led diversified scientific teams from drug design through clinical development, playing a pivotal role in bringing 18 NCEs into clinical development from concept in the fields of immune-inflammation, metabolic disorders, pain, and oncology.",
         "He served in the R&D divisions of leading Indian pharmaceutical companies, mentoring and guiding R&D teams on several out-licensing deals with a cumulative deal value exceeding $1.5 billion.",
